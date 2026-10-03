@@ -13,7 +13,7 @@ windows:
 	x86_64-w64-mingw32-gcc $(SRC) $(COMPILER_FLAGS) -o $(OUT_WINDOWS) -lSDL3
 
 web:
-	emcc -USE_SDL=3 $(SRC) -o $(OUT_WEB)
+	emcc -sUSE_SDL=3 $(SRC) -o $(OUT_WEB)
 
 run-linux:
 	./$(OUT_LINUX)
@@ -22,7 +22,7 @@ run-windows:
 	./$(OUT_WINDOWS)
 
 run-web:
-	emrun ./$(OUT_WEB)
+	emrun --port 0 ./$(OUT_WEB)
 
 clean:
-	rm -f $(OUT_LINUX) $(OUT_WINDOWS) $(OUT_WEB)
+	rm -f $(OUT_LINUX) $(OUT_WINDOWS) $(OUT_WEB) main.wasm main.js
