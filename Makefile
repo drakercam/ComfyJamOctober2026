@@ -7,7 +7,7 @@ OUT_WEB = main.html
 .PHONY = linux windows web run-linux run-windows run-web clean
 
 linux:
-	gcc $(SRC) $(COMPILER_FLAGS) -o $(OUT_LINUX) -lSDL3
+	g++ $(SRC) $(COMPILER_FLAGS) -o $(OUT_LINUX) -lSDL3
 
 windows:
 	x86_64-w64-mingw32-gcc $(SRC) $(COMPILER_FLAGS) -o $(OUT_WINDOWS) -lSDL3
